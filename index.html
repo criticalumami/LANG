@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    try { document.querySelector('meta[name="color-scheme"]').content = localStorage.getItem("color-scheme") ?? "light dark"; } catch (e) {}
+  </script>
+  <title>LANG // German &amp; Hebrew to C1</title>
+  <meta name="description" content="Progress, weak spots, syllabus and lesson material of a German and Hebrew course taught by a Telegram bot.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="dwm-bar">
+    <nav class="dwm-tags" role="tablist" aria-label="Views">
+      <button type="button" class="dwm-tag" role="tab" data-tab="status" aria-selected="true" title="1">1:status</button>
+      <button type="button" class="dwm-tag" role="tab" data-tab="weak" aria-selected="false" title="2">2:difficulties</button>
+      <button type="button" class="dwm-tag" role="tab" data-tab="syllabus" aria-selected="false" title="3">3:syllabus</button>
+      <button type="button" class="dwm-tag" role="tab" data-tab="lessons" aria-selected="false" title="4">4:lessons</button>
+      <button type="button" class="dwm-tag" role="tab" data-tab="quizzes" aria-selected="false" title="5">5:quizzes</button>
+      <button type="button" class="dwm-tag" role="tab" data-tab="transcript" aria-selected="false" title="6">6:transcript</button>
+    </nav>
+    <div class="dwm-status">
+      <label>lang <select id="lang"><option value="all">all</option><option value="de">de</option><option value="he">he</option></select></label>
+      <span class="gen" id="generated"></span>
+      <button type="button" id="theme" title="Toggle light/dark">◐</button>
+    </div>
+  </header>
+  <main>
+    <section data-panel="status"></section>
+    <section data-panel="weak" hidden></section>
+    <section data-panel="syllabus" hidden></section>
+    <section data-panel="lessons" hidden></section>
+    <section data-panel="quizzes" hidden></section>
+    <section data-panel="transcript" hidden></section>
+  </main>
+  <footer>
+    <span>LANG · German (Goethe A1→C1) &amp; Hebrew (ulpan 0→C1, through Arabic)</span>
+    <span>taught by Billy, a Telegram bot · lessons from <i>Basic German</i> (Routledge) and <i>The Routledge Introductory Course in Modern Hebrew</i>; book pages are not published</span>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
